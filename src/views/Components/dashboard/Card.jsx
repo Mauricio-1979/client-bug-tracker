@@ -1,0 +1,18 @@
+import React from 'react';
+import Priority from '../../../controllers/PriorityController';
+
+import './Card.css';
+
+function Card(props) {
+
+    const {level, color} = Priority(props.Priority);
+
+  return (
+    <div className='dashboard-card' onClick={props.clicked} style={{color:color}}>
+        <h2>Total: {level}</h2>
+        <p>{props.count}</p>
+    </div>
+  )
+}
+
+export default Card;
